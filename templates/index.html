@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		table
+	</title>
+</head>
+<style>
+	.content-table{
+		border-collapse: collapse;
+		margin: 25px;
+		min-width: 400px;
+	}
+	.content-table thead tr{
+		background-color: #009879;
+		color:#ffffff;
+		text-align:left;
+	}
+	.content-table th,
+	.content-table td{
+		padding: 12px 15px;
+
+	}
+
+	.content-table tbody tr{
+		border-bottom: 1px solid #dddddd;
+	}
+
+</style>
+<body>
+	<h2>Catalog</h2>
+	<table class='content-table'>
+		<thead>
+            <tr>
+              {% for header in headings %}
+              <th>{{ header }}</th>
+              {% endfor %}
+            </tr>
+		</thead>
+		<tbody>
+
+            {% for row in data %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+		</tbody>
+	</table>
+</body>
+</html></html>
